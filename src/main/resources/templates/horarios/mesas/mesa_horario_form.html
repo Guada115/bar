@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registrar Mesa y Horario</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h2>Registrar Mesa y Horario</h2>
+<form th:action="@{/mesas/guardarConHorario}" method="post">
+    <!-- MesaBar -->
+    <fieldset>
+        <legend>Mesa</legend>
+        Capacidad: <input type="number" name="capacidad" required><br>
+        Ubicación: <input type="text" name="ubicacion" required><br>
+        Estado:
+        <select name="estado">
+            <option value="LIBRE">Libre</option>
+            <option value="RESERVADA">Reservada</option>
+            <option value="OCUPADA">Ocupada</option>
+        </select><br>
+        Tipo:
+        <select name="tipo">
+            <option value="ALTA">Alta</option>
+            <option value="BAJA">Baja</option>
+            <option value="PRIVADA">Privada</option>
+        </select><br>
+    </fieldset>
+
+    <!-- HorarioBar -->
+    <fieldset>
+        <legend>Horario</legend>
+        Hora Apertura: <input type="time" name="horaApertura" required><br>
+        Hora Cierre: <input type="time" name="horaCierre" required><br>
+        Día:
+        <select name="dia">
+            <option value="JUEVES">Jueves</option>
+            <option value="VIERNES">Viernes</option>
+            <option value="SABADO">Sábado</option>
+            <option value="DOMINGO">Domingo</option>
+        </select><br>
+        ¿Hora Feliz?
+        <input type="checkbox" name="horaFeliz"><br>
+    </fieldset>
+
+    <button type="submit">Guardar Mesa y Horario</button>
+</form>
+</body>
+</html>
