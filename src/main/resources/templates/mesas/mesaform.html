@@ -11,7 +11,13 @@
     <fieldset>
         <legend>Mesa</legend>
         Capacidad: <input type="number" name="capacidad" required><br>
-        Ubicación: <input type="text" name="ubicacion" required><br>
+        Ubicación:
+        <select name="ubicacion" >
+            <option value="BARRA">Barra</option>
+            <option value="TERRAZA">Terraza</option>
+            <option value="VIP">Vip</option>
+            <option value="SOFA">Sofa</option>
+        </select><br>
         Estado:
         <select name="estado">
             <option value="LIBRE">Libre</option>

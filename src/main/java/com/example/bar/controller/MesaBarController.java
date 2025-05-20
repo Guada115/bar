@@ -24,7 +24,7 @@ public class MesaBarController {
     @GetMapping("/nueva")
     public String mostrarFormularioNuevaMesa(Model model) {
         model.addAttribute("mesa", new MesaBar());
-        return "mesas/formulario";
+        return "mesas/mesaform";
     }
 
     @PostMapping("/guardar")

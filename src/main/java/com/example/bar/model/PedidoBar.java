@@ -19,4 +19,6 @@ public class PedidoBar {
     public enum EstadoPedido {
         PENDIENTE, ENTREGADO, CANCELADO
     }
+    // getters y setters
+
 }
