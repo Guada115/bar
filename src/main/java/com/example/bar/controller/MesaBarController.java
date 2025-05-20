@@ -1,12 +1,16 @@
 package com.example.bar.controller;
 
 
+import com.example.bar.model.HorarioBar;
 import com.example.bar.model.MesaBar;
 import com.example.bar.repository.MesaBarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/mesas")
@@ -17,10 +21,11 @@ public class MesaBarController {
 
     @GetMapping
     public String listarMesas(Model model) {
-        model.addAttribute("mesas", mesaBarRepository.findAll());
-        return "mesas/lista"; // thymeleaf
+        List<MesaBar> mesas = (List<MesaBar>) mesaBarRepository.findAll();
+        model.addAttribute("mesas", mesas);
+        return "mesas/mesalista";
     }
-
+    //formulario para crear una nueva mesa
     @GetMapping("/nueva")
     public String mostrarFormularioNuevaMesa(Model model) {
         model.addAttribute("mesa", new MesaBar());
@@ -38,4 +43,5 @@ public class MesaBarController {
         mesaBarRepository.deleteById(id);
         return "redirect:/mesas";
     }
+
 }

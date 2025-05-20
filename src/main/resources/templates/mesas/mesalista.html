@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Mesas</title>
+</head>
+<body>
+<h2>Mesas Registradas</h2>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Capacidad</th>
+        <th>Ubicación</th>
+        <th>Estado</th>
+        <th>Tipo</th>
+        <th>Ver Horario</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="mesa : ${mesas}">
+        <td th:text="${mesa.id}"></td>
+        <td th:text="${mesa.capacidad}"></td>
+        <td th:text="${mesa.ubicacion}"></td>
+        <td th:text="${mesa.estado}"></td>
+        <td th:text="${mesa.tipo}"></td>
+        <td>
+            <a th:href="@{'/mesas/' + ${mesa.id} + '/horario'}">Ver Horario</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<br>
+<a th:href="@{/mesas/nueva}">Registrar nueva mesa</a>
+
+</body>
+</html>
