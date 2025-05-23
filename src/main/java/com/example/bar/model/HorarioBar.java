@@ -17,6 +17,6 @@ public class HorarioBar {
     private Long mesaId;
 
     public enum DiaSemana {
-        JUEVES, VIERNES, SABADO, DOMINGO
+        jueves,viernes,sabado,domingo
     }
 }

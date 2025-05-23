@@ -16,6 +16,6 @@ public class ClienteBar {
     private String bebidaFavorita;
 
     public enum TipoCliente {
-        OCASIONAL, REGULAR, VIP
+        ocacional,regular,vip
     }
 }
