@@ -34,6 +34,7 @@ public class MesaBarController {
 
     @PostMapping("/guardar")
     public String guardarMesa(@ModelAttribute MesaBar mesa) {
+        mesa.setId(null);
         mesaBarRepository.save(mesa);
         return "redirect:/mesas";
     }

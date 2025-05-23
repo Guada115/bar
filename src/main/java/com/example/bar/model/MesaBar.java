@@ -14,24 +14,20 @@ public class MesaBar {
     private TipoMesa tipo;  // alta, baja, privada
 
     public enum EstadoMesa {
-        LIBRE, RESERVADA, OCUPADA
+        libre,reservada,ocupada
     }
 
     public enum TipoMesa {
-        ALTA, BAJA, PRIVADA
+        alta,baja,privada
     }
     public enum UbicacionMesa {
-        BARRA, TERRAZA, VIP, SOFA
+        barra,terraza,vip,sofa
     }
 
     // getters y setters
 
-    public Integer getId(){
-        return id.intValue();
-    }
-    public void setId(Integer id){
-        this.id = Long.valueOf(id);
-    }
+
+    
     public int getCapacidad() {
         return capacidad;
     }
