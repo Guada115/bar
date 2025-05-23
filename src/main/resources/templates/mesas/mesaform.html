@@ -6,29 +6,29 @@
 </head>
 <body>
 <h2>Registrar Mesa y Horario</h2>
-<form th:action="@{/mesas/guardarConHorario}" method="post">
+<form th:action="@{/mesas/guardar}" method="post" th:object="${mesa}">
     <!-- MesaBar -->
     <fieldset>
         <legend>Mesa</legend>
         Capacidad: <input type="number" name="capacidad" required><br>
         Ubicación:
         <select name="ubicacion" >
-            <option value="BARRA">Barra</option>
-            <option value="TERRAZA">Terraza</option>
-            <option value="VIP">Vip</option>
-            <option value="SOFA">Sofa</option>
+            <option value="barra">barra</option>
+            <option value="terraza">terraza</option>
+            <option value="vip">vip</option>
+            <option value="sofa">sofa</option>
         </select><br>
         Estado:
         <select name="estado">
-            <option value="LIBRE">Libre</option>
-            <option value="RESERVADA">Reservada</option>
-            <option value="OCUPADA">Ocupada</option>
+            <option value="libre">libre</option>
+            <option value="reservada">reservada</option>
+            <option value="ocupada">ocupada</option>
         </select><br>
         Tipo:
         <select name="tipo">
-            <option value="ALTA">Alta</option>
-            <option value="BAJA">Baja</option>
-            <option value="PRIVADA">Privada</option>
+            <option value="alta">alta</option>
+            <option value="baja">baja</option>
+            <option value="prvada">privada</option>
         </select><br>
     </fieldset>
 
@@ -39,10 +39,10 @@
         Hora Cierre: <input type="time" name="horaCierre" required><br>
         Día:
         <select name="dia">
-            <option value="JUEVES">Jueves</option>
-            <option value="VIERNES">Viernes</option>
-            <option value="SABADO">Sábado</option>
-            <option value="DOMINGO">Domingo</option>
+            <option value="jueves">jueves</option>
+            <option value="viernes">viernes</option>
+            <option value="sabado">sabado</option>
+            <option value="Domingo">domingo</option>
         </select><br>
         ¿Hora Feliz?
         <input type="checkbox" name="horaFeliz"><br>
